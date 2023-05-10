@@ -1,0 +1,1 @@
+sudo hdiutil create archive.dmg -ov -volname "NuHash" -fs HFS+ -srcfolder out
