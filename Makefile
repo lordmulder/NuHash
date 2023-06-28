@@ -21,7 +21,7 @@ ifneq ($(CPU),)
   CFLAGS += -m$(CPU)
 endif
 
-CFLAGS += -std=gnu99 -Wall -pedantic -Wno-deprecated-declarations -Ilibnuhash/include -D_FILE_OFFSET_BITS=64
+CFLAGS += -std=gnu99 -Wall -pedantic -Wno-deprecated-declarations -Ilibnuhash/c99/include -D_FILE_OFFSET_BITS=64
 
 ifneq ($(DEBUG),1)
   CFLAGS += -Ofast -DNDEBUG
@@ -53,11 +53,13 @@ ifneq ($(filter %w64-mingw32 %w64-windows-gnu,$(OS_TYPE)),)
   LDFLAGS += -municode
 endif
 
+RCFLAGS += -Ilibnuhash/c99/src
+
 # ----------------------------------------------------------------------------
 # Files
 # ----------------------------------------------------------------------------
 
-INFILES = $(patsubst %.c,%.o,$(wildcard libnuhash/src/*.c)) $(patsubst %.c,%.o,$(wildcard tool/src/*.c))
+INFILES = $(patsubst %.c,%.o,$(wildcard libnuhash/c99/src/*.c)) $(patsubst %.c,%.o,$(wildcard tool/src/*.c))
 OUTFILE = bin/nuhash
 OUTPATH = $(patsubst %/,%,$(dir $(OUTFILE)))
 
@@ -87,7 +89,7 @@ $(OUTPATH):
 	$(CC) $(CFLAGS) -c -o $@ $<
 
 %.o: %.rc
-	windres -o $@ $<
+	windres $(RCFLAGS) -o $@ $<
 
 clean:
 	rm -vrf $(OUTPATH)

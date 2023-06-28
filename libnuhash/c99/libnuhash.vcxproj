@@ -43,7 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\nuhash.h" />
-    <ClInclude Include="src\version.h" />
+    <ClInclude Include="src\nuhash_version.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

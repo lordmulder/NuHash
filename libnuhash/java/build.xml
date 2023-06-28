@@ -1,0 +1,36 @@
+<project default="all">
+    <property name="outname" value="nuhash-1.jar"/>
+    <property name="dir.bin" location="bin"/>
+    <property name="dir.out" location="out"/>
+    <property name="dir.src" location="src"/>
+    <property name="file.license" location="../../LICENSE.txt"/>
+
+    <tstamp>
+        <format property="today" pattern="yyyy-MM-dd HH:mm:ss"/>
+    </tstamp>
+
+    <target name="all" depends="clean,jar"/>
+
+    <target name="mkdir">
+        <mkdir dir="${dir.bin}"/>
+        <mkdir dir="${dir.out}"/>
+    </target>
+
+    <target name="clean" depends="mkdir">
+        <delete verbose="true" includeEmptyDirs="true"><fileset dir="${dir.bin}" includes="**/*"/></delete>
+        <delete verbose="true" includeEmptyDirs="true"><fileset dir="${dir.out}" includes="**/*"/></delete>
+    </target>
+
+    <target name="compile" depends="mkdir">
+        <javac srcdir="${dir.src}" destdir="${dir.bin}" target="1.8" source="1.8" includeantruntime="false"/>
+    </target>
+
+    <target name="jar" depends="compile">
+        <jar destfile="${dir.out}/${outname}" basedir="${dir.bin}">
+            <fileset file="${file.license}"/>
+            <manifest>
+                <attribute name="Build-Date" value="${today}"/>
+            </manifest>
+        </jar>
+    </target>
+</project>
