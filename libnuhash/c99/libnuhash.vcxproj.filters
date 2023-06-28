@@ -23,7 +23,7 @@
     <ClInclude Include="include\nuhash.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="src\version.h">
+    <ClInclude Include="src\nuhash_version.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>

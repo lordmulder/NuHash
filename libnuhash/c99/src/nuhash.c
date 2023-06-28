@@ -4,7 +4,7 @@
 /******************************************************************************/
 
 #include "nuhash.h"
-#include "version.h"
+#include "nuhash_version.h"
 #include <string.h>
 
 #define COUNT_OF(ARRAY) (sizeof(ARRAY) / sizeof(ARRAY[0]))

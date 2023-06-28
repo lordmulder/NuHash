@@ -5,7 +5,7 @@ VisualStudioVersion = 17.6.33815.320
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NuHash", "tool\nuhash.vcxproj", "{867A1634-C6AC-4089-B645-A1BE289D597B}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libnuhash", "libnuhash\libnuhash.vcxproj", "{8FA5C597-887D-46BC-A6C9-2183AEF7B793}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libnuhash", "libnuhash\c99\libnuhash.vcxproj", "{8FA5C597-887D-46BC-A6C9-2183AEF7B793}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

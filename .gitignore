@@ -1,6 +1,8 @@
 *.o
 *.user
+/_release
+/**/.settings
+/**/.vs
+/**/bin
 /**/obj
-/.vs
-/bin
-/out
+/**/out
