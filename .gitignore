@@ -1,8 +1,10 @@
 *.o
 *.user
+*.lock
 /_release
 /**/.settings
 /**/.vs
 /**/bin
 /**/obj
 /**/out
+/**/target
