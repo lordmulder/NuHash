@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>warnings</Nullable>
+    <PackageId>LibNuHash</PackageId>
+    <Description>NuHash Core Library</Description>
+    <Copyright>Copyright © LoRd_MuldeR &lt;MuldeR2@GMX.de&gt; 2023</Copyright>
+    <Company>Muldersoft.com</Company>
+    <Authors>LoRd_MuldeR</Authors>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+</Project>

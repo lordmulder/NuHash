@@ -1,9 +1,10 @@
+*.lock
 *.o
 *.user
-*.lock
 /_release
 /**/.settings
 /**/.vs
+/**/TestResults
 /**/bin
 /**/obj
 /**/out
