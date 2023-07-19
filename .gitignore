@@ -1,11 +1,16 @@
+/_release
 *.lock
 *.o
+*.pyd
 *.user
-/_release
 /**/.settings
 /**/.vs
 /**/TestResults
+/**/__pycache__
 /**/bin
+/**/build
+/**/node_modules
 /**/obj
 /**/out
+/**/package-lock.*
 /**/target
