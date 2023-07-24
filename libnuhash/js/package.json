@@ -1,0 +1,15 @@
+{
+    "name": "nuhash",
+    "version": "1.0.0",
+    "type": "module",
+    "license": "CC0-1.0",
+    "scripts": {
+        "start": "node node_modules/http-server/bin/http-server",
+        "test": "mocha"
+    },
+    "devDependencies": {
+        "console-title": "^1.1.0",
+        "http-server": "^14.1.1",
+        "mocha": "^10.2.0"
+    }
+}

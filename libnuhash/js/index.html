@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!-- NuHash, by LoRd_MuldeR <MuldeR2@GMX.de>                          -->
+<!-- This work has been released under the CC0 1.0 Universal license! -->
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body style="font-family: Hack, Monospace;">
+        <h1>NuHash Example</h1>
+        <h3 id="statusIndicator">&#8987;</h3>
+        <script type="module">
+            import { NuHash, toHexStr } from "./lib/nuhash.mjs";
+            let statusIndicator = document.getElementById("statusIndicator");
+            async function setResult(resultText) {
+                statusIndicator.innerHTML = resultText;
+                statusIndicator = document.createElement("h3");
+                statusIndicator.innerHTML = "&#8987;";
+                document.body.appendChild(statusIndicator);
+                await new Promise(resolve => setTimeout(resolve, 25));
+            }
+            async function runTest(iterations, input) {
+                const nuhash = new NuHash();
+                const source = new TextEncoder().encode(input);
+                for (let i = 0; i < iterations; ++i) {
+                    nuhash.update(source);
+                }
+                await setResult(toHexStr(nuhash.doFinal()));
+            }
+            async function allTests() {
+                await runTest(0x00000, "");
+                await runTest(0x00001, "abcdbcdecdefdefgefghfghighijhijkijkljklmklmnlmnomnopnopq");
+                await runTest(0x00001, "abcdefghbcdefghicdefghijdefghijkefghijklfghijklmghijklmnhijklmnoijklmnopjklmnopqklmnopqrlmnopqrsmnopqrstnopqrstu");
+                await runTest(0xF4240, "a");
+            }
+            await allTests();
+            statusIndicator.innerHTML = "&#x1F3C1;";
+        </script>
+    </body>
+</html>
